@@ -7,9 +7,6 @@
  function generateTable() {
   // Load JSON data into an object via an Ajax request.
   loadJSONdata();
-
-  // Display the JSON data using jqxGrid.
-//  displayInGrid(jsonData);
  }
 
  // Load JSON data into an object via an Ajax request.
@@ -53,7 +50,7 @@
   $("#jqxgrid").jqxGrid({
      width: 400,
      height: 400,
-     source: dataAdapter,                
+     source: dataAdapter,
      pageable: true, autoheight: true, sortable: true, altrows: true, enabletooltips: true,
      editable: false, scrollmode: "default",
      selectionmode: 'multiplecellsadvanced',
@@ -61,7 +58,7 @@
      columns: [
                { text: 'Text', columngroup: 'Details', datafield: 'text', width: 200 },
                { text: 'X-value', columngroup: 'Details', datafield: 'xval', width: 100 },
-               { text: 'Y-value', columngroup: 'Details', datafield: 'yval', /*cellsformat: 'c2',*/ width: 100 },
+               { text: 'Y-value', columngroup: 'Details', datafield: 'yval', /*cellsformat: 'c2',*/ width: 100 }
               ],
      columngroups: [
                     { text: 'Information', align: 'center', name: 'Info' }

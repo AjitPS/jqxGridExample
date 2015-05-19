@@ -1,27 +1,23 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/jqx.base.css" type="text/css"/>
-<!--        <link rel="stylesheet" href="css/jqx.arctic.css" type="text/css"/> -->
-        <link rel="stylesheet" href="css/jqx.energyblue.css" type="text/css"/>
         <link rel="stylesheet" href="css/pageStyle.css" type="text/css"/>
         <meta charset=utf-8 />
         <script src="libs/jquery-1.11.2.min.js"></script>
-        <script type="text/javascript" src="libs/jqxcore.js"></script>
-        <script type="text/javascript" src="libs/jqxdata.js"></script> 
-        <script type="text/javascript" src="libs/jqxbuttons.js"></script>
-        <script type="text/javascript" src="libs/jqxscrollbar.js"></script>
-        <script type="text/javascript" src="libs/jqxmenu.js"></script>
-        <script type="text/javascript" src="libs/jqxcheckbox.js"></script>
-        <script type="text/javascript" src="libs/jqxlistbox.js"></script>
-        <script type="text/javascript" src="libs/jqxdropdownlist.js"></script>
-        <script type="text/javascript" src="libs/jqxgrid.js"></script>
-        <script type="text/javascript" src="libs/jqxgrid.sort.js"></script> 
-        <script type="text/javascript" src="libs/jqxgrid.pager.js"></script> 
-        <script type="text/javascript" src="libs/jqxgrid.selection.js"></script> 
-        <script type="text/javascript" src="libs/jqxgrid.edit.js"></script>
+        <script type="text/javascript" src="libs/jqwidgets/jqxcore.js"></script>
+        <script type="text/javascript" src="libs/jqwidgets/jqxdata.js"></script>
+        <script type="text/javascript" src="libs/jqwidgets/jqxbuttons.js"></script>
+        <script type="text/javascript" src="libs/jqwidgets/jqxscrollbar.js"></script>
+        <script type="text/javascript" src="libs/jqwidgets/jqxmenu.js"></script>
+        <script type="text/javascript" src="libs/jqwidgets/jqxlistbox.js"></script>
+        <script type="text/javascript" src="libs/jqwidgets/jqxdropdownlist.js"></script>
+        <script type="text/javascript" src="libs/jqwidgets/jqxgrid.js"></script>
+        <script type="text/javascript" src="libs/jqwidgets/jqxgrid.selection.js"></script>
+        <script type="text/javascript" src="libs/jqwidgets/jqxgrid.columnsresize.js"></script>
+        <script type="text/javascript" src="libs/jqwidgets/jqxgrid.pager.js"></script>
 
-        <script src="javascript/jsCode.js"></script>
-        <title>jqxGrid example</title>
+        <script src="javascript/masterDetailsExample_jsCode.js"></script>
+        <title>jqxGrid Master Details example</title>
     </head>
 <body class='default'>
         <b>Displaying JSON data in a table using jqxGrid</b><br/><br/>
@@ -29,47 +25,14 @@
              Generate Table: <input type="button" value="Generate" onclick="generateTable();" title="Click to generate the Table">
         </div><br/>
 
-    <!-- The jqxGrid -->
-    <div id="jqxgrid">
-    </div>
-    <div style="margin-top: 20px;">
-    <div style="clear: both; font-family: Verdana, Geneva, 'DejaVu Sans', sans-serif; font-size: 12px;">
-        <div style="float: left;">
-            <div>
-                <input value="100" style="width: 50px;" maxlength="4" id="rowindexinput2" type="text" />
-                <input id="scrolltobutton" type="button" value="Scroll to Row" />
-            </div>
-            <div style="margin-top: 10px;">
-                <input value="0" style="width: 50px;" maxlength="4" id="rowindexinput" type="text" />
-                <input id="selectrowbutton" type="button" value="Select Row" />
-                <input id="clearselectionbutton" type="button" value="Clear Selection" />
-            </div> 
-            <div style="margin-top: 10px;" id="enablehover">
-                Enable Hover
-            </div>
-            <div style="margin-top: 10px;">
-                Selection Mode:
-                <div style="margin-top: 5px;" id="enableselection">
-                </div>
-                <div style="margin-top: 10px; font-size: 12px; font-family: Verdana, Geneva, 'DejaVu Sans', sans-serif;">
-                    Selection Modes:
-                    <ul>
-                        <li>"none" - disables the selection. Selection is possible only through the API.</li>
-                        <li>"singlerow" - full row selection. Each click changes the selected row.</li>
-                        <li>"multiplerows" - each click selects a new row. Click on a selected row unselects it.</li>
-                        <li>"multiplerowsextended" - users can select multiple rows with drag and drop or<br /> by clicking on rows while holding Ctrl or Shift.</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- The jqxGrids -->
+    <div id='jqxWidget' style="font-size: 13px; font-family: Verdana; float: left; padding-left: 20px;">
+        <h3>Main grid:</h3>
+        <div id="mainGrid">
         </div>
-    </div>
-    <div style="clear: both; font-family: Verdana, Geneva, 'DejaVu Sans', sans-serif; font-size: 12px;">
-        <span>Selection Log:</span>
-        <div style="margin-top: 10px;">
-            <span>Selected Row Index:</span> <span id="selectrowindex"></span>
-            <br />
-            <span>Unselected Row Index:</span> <span id="unselectrowindex"></span>
+        <h3>Sub-grid showing information about selected row in main grid:</h3>
+        <div id="subGrid">
         </div>
-    </div>
     </div>
 </body>
+</html>
