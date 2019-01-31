@@ -21,3 +21,7 @@ Example using jqxGrid (from jqWidgets) to display JSON data
   Using themes
 
 
+
+
+---
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/AjitPS/jqxGridExample/master)
